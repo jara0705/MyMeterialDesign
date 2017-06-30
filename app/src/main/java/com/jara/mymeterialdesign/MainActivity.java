@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jara.mymeterialdesign.adapter.MainFragmentPageAdapter;
+import com.jara.mymeterialdesign.categoryfrag.FindFragment;
+import com.jara.mymeterialdesign.categoryfrag.HomeFragment;
+import com.jara.mymeterialdesign.categoryfrag.HotnewsFragment;
+import com.jara.mymeterialdesign.categoryfrag.PersonalFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
@@ -62,15 +66,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-//        FirstFragment firstFragment = new FirstFragment();
-//        SecondFragment secondFragment = new SecondFragment();
-//        ThirdFragment thirdFragment = new ThirdFragment();
-//        ForthFragment forthFragment = new ForthFragment();
-//        fragmentList = new ArrayList<>();
-//        fragmentList.add(firstFragment);
-//        fragmentList.add(secondFragment);
-//        fragmentList.add(thirdFragment);
-//        fragmentList.add(forthFragment);
+        HomeFragment homeFragment = new HomeFragment();
+        HotnewsFragment hotnewsFragment = new HotnewsFragment();
+        FindFragment findFragment = new FindFragment();
+        PersonalFragment personalFragment = new PersonalFragment();
+        fragmentList = new ArrayList<>();
+        fragmentList.add(homeFragment);
+        fragmentList.add(hotnewsFragment);
+        fragmentList.add(findFragment);
+        fragmentList.add(personalFragment);
     }
 
 }
