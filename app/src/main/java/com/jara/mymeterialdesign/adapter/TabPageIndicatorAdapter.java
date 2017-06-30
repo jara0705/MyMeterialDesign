@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 /**
- * Created by Administrator on 2017-6-30.
+ * Created by jara on 2017-6-30.
  */
 
 public class TabPageIndicatorAdapter extends FragmentPagerAdapter {
