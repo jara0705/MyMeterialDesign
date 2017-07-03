@@ -1,7 +1,7 @@
 package com.jara.mymeterialdesign.enumset;
 
 /**
- * Created by Administrator on 2017-6-30.
+ * Created by jara on 2017-6-30.
  */
 
 public enum SubFragmentEnum {
@@ -19,7 +19,7 @@ public enum SubFragmentEnum {
 
 
     SubFragmentEnum(String code, String name){
-        
+
     }
 
 }

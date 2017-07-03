@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.jara.mymeterialdesign.R;
 
 /**
- * Created by Administrator on 2017-6-30.
+ * Created by jara on 2017-6-30.
  */
 
 public class FindFragment extends Fragment {
