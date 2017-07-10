@@ -10,6 +10,7 @@ import com.jara.mymeterialdesign.categoryfrag.FindFragment;
 import com.jara.mymeterialdesign.categoryfrag.HomeFragment;
 import com.jara.mymeterialdesign.categoryfrag.HotnewsFragment;
 import com.jara.mymeterialdesign.categoryfrag.PersonalFragment;
+import com.jara.mymeterialdesign.categoryfrag.subfragment.NewFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
         init();
         mainFragmentPageAdapter = new MainFragmentPageAdapter(getSupportFragmentManager(), fragmentList);
         viewPager.setAdapter(mainFragmentPageAdapter);

@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context="com.jara.mymeterialdesign.MainActivity">
 
-    <android.support.v4.view.ViewPager
+    <com.jara.mymeterialdesign.commonview.NoScrollViewPager
             android:id="@+id/main_viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

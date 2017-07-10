@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
+import com.jara.mymeterialdesign.enumset.SubFragmentEnum;
+
 import java.util.List;
 
 /**
@@ -14,12 +16,12 @@ import java.util.List;
 public class TabPageIndicatorAdapter extends FragmentPagerAdapter {
 
     private List<Fragment> fragments;
-    private String[] title;
+    private SubFragmentEnum[] subFragmentEnum;
 
-    public TabPageIndicatorAdapter(FragmentManager fm, List<Fragment> fragments, String[] title) {
+    public TabPageIndicatorAdapter(FragmentManager fm, List<Fragment> fragments, SubFragmentEnum[] fragmentEnum) {
         super(fm);
         this.fragments = fragments;
-        this.title = title;
+        this.subFragmentEnum = fragmentEnum;
     }
 
     @Override
@@ -29,12 +31,12 @@ public class TabPageIndicatorAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return title.length;
+        return subFragmentEnum.length;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return title[position % title.length];
+        return subFragmentEnum[position % subFragmentEnum.length].getName();
     }
 
     @Override
