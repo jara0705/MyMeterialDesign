@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 import com.jara.mymeterialdesign.adapter.MainFragmentPageAdapter;
 import com.jara.mymeterialdesign.categoryfrag.FindFragment;
@@ -11,6 +13,7 @@ import com.jara.mymeterialdesign.categoryfrag.HomeFragment;
 import com.jara.mymeterialdesign.categoryfrag.HotnewsFragment;
 import com.jara.mymeterialdesign.categoryfrag.PersonalFragment;
 import com.jara.mymeterialdesign.categoryfrag.subfragment.NewFragment;
+import com.jara.mymeterialdesign.enumset.MainFragmentEnum;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
@@ -23,7 +26,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     private List<Fragment> fragmentList;
-    private int i = 0;
+    private MainFragmentEnum i;
     private MainFragmentPageAdapter mainFragmentPageAdapter;
     @BindView(R.id.main_viewpager)
     ViewPager viewPager;
@@ -39,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         init();
         mainFragmentPageAdapter = new MainFragmentPageAdapter(getSupportFragmentManager(), fragmentList);
         viewPager.setAdapter(mainFragmentPageAdapter);
-        viewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
+        viewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
@@ -49,21 +52,21 @@ public class MainActivity extends AppCompatActivity {
         bottomBar.setOnTabSelectListener(tabId -> {
             switch (tabId) {
                 case R.id.tab_home:
-                    i = 0;
+                    i = MainFragmentEnum.MAIN_HOME;
                     break;
                 case R.id.tab_hot_news:
-                    i = 1;
+                    i = MainFragmentEnum.MAIN_HOT;
                     break;
                 case R.id.tab_find:
-                    i = 2;
+                    i = MainFragmentEnum.MAIN_FIND;
                     break;
                 case R.id.tab_me:
-                    i = 3;
+                    i = MainFragmentEnum.MAIN_PERSONAL;
                     break;
                 default:
                     break;
             }
-            viewPager.setCurrentItem(i, false);
+            viewPager.setCurrentItem(i.getCode(), false);
         });
     }
 
